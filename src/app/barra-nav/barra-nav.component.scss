@@ -1,0 +1,15 @@
+.cajaCabecera {
+    height: 60px;
+    background-color: rgb(48, 48, 238);
+}
+
+/*No reconoce que Titulo este dentro de caja Cabecera*/
+#Titulo {
+    width: 30%;
+    padding-top: 3%;
+    margin-left: 35%;
+    text-align: center;
+    font-size: 100%;
+    color: white;
+    float: left;
+}
