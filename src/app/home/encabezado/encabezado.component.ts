@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encabezado.component.scss']
 })
 export class EncabezadoComponent implements OnInit {
-
+  title = 'The Auctioneer';
   constructor() { }
 
   ngOnInit() {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarraNavComponent } from './barra-nav.component';
+import { CuerpoIntroComponent } from './cuerpo-intro.component';
 
-describe('BarraNavComponent', () => {
-  let component: BarraNavComponent;
-  let fixture: ComponentFixture<BarraNavComponent>;
+describe('CuerpoIntroComponent', () => {
+  let component: CuerpoIntroComponent;
+  let fixture: ComponentFixture<CuerpoIntroComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BarraNavComponent ]
+      declarations: [ CuerpoIntroComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BarraNavComponent);
+    fixture = TestBed.createComponent(CuerpoIntroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
