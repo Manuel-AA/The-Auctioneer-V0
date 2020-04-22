@@ -1,0 +1,48 @@
+<div class = "container">
+    <app-encabezado></app-encabezado>
+    
+    <div class="container">
+        
+            <div class="media border p-3" *ngIf="imagenActual === 1" >
+                    <img [src]="imagen1" class="mr-3 mt-3 rounded-circle" style="width:20%;">
+                    <div class="media-body">
+                        <br>
+                      <h4>¿Qué es una subasta? </h4>
+                      <p>Una subasta consiste en un ejercicio de compra y venta de artículos a base de pujas.<br><br>
+
+                        Un usuario, el subastador, pondrá a la venta uno de sus productos a un precio inicial y por un tiempo determinado. 
+                        El resto de usuarios podrán pujar por ese producto (siempre y cuando superen en un 5% el coste de la puja anterior) y el que tenga la puja más alta al acabar el tiempo se lleva el producto.
+                        Además, existe la posibilidad de comprar el producto de manera instantánea si se abona el importe de comprar ya, impuesto por el subastador y generalmente muy elevado.<br>
+                        <br>
+                        ¿Lo comprarás directamente o vencerás al resto en la puja?
+                
+                      </p>
+                      
+                      
+                    </div>
+                  </div>
+                  <div class="media border p-3" *ngIf="imagenActual === 2" >
+                        <img [src]="imagen2" class="mr-3 mt-3 rounded-circle" style="width:20%;">
+                        <div class="media-body">
+                            <br>
+                          <h4>¿Estas subastas son seguras? </h4>
+                          <p>Desde The Auctioneer queremos tranquilizar a todos aquellos usuarios poco experimentados en el mundo de la
+                              tecnología y que dudan en si pagar a través de internet es o no seguro. <br> <br>
+
+                              Al igual que cualquier método de pago, existen vulnerabilidades. No obstante, es preciso comentar que esta aplicación
+                              cuenta con convenios con métodos de pago, como PayPal, los cuales garantizan un pago seguro y, en caso de fraude o robo cibernético,
+                              se encargarán de garantizar el reembolso de todo el importe pagado. <br> <br>
+
+                              Por lo tanto ante la pregunta, ¿es seguro pagar en esta página? la respuesta es un rotundo SÍ.
+                    
+                          </p>
+                          
+                          
+                        </div>
+                      </div>
+                  <img [src] = "imagenFlechaDer" id="flechaDer" (click)="cambiarImagenDer()">
+    
+    </div>
+  
+    <app-footer></app-footer>
+</div>

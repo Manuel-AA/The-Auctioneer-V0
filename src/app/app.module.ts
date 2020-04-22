@@ -11,6 +11,7 @@ import { HomeComponent } from './inside/home/home.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { ConocerComponent } from './inside/conocer/conocer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     HomeComponent,
     PresentacionComponent,
     RegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    ConocerComponent
   ],
   imports: [
     BrowserModule,
