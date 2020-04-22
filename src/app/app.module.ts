@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './inside/encabezado/encabezado.component';
 import { FooterComponent } from './inside/footer/footer.component';
-import { CuerpoComponent } from './inside/cuerpo/cuerpo.component';
-import { InicioComponent } from './inside/inicio/inicio.component';
+import { SubirProductoComponent } from './inside/subir_producto/subir_producto.component';
+import { VerProductoComponent } from './inside/ver_producto/ver_producto.component';
 import { InsideComponent } from './inside/inside.component';
 import { HomeComponent } from './inside/home/home.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
@@ -18,8 +18,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     AppComponent,
     EncabezadoComponent,
     FooterComponent,
-    CuerpoComponent,
-    InicioComponent,
+    SubirProductoComponent,
+    VerProductoComponent,
     InsideComponent,
     HomeComponent,
     PresentacionComponent,
