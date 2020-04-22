@@ -3,18 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IntroduccionComponent } from './introduccion/introduccion.component';
-import { HomeComponent } from './home/home.component';
-import { VistaPujadorComponent } from './vista-pujador/vista-pujador.component';
-import { VistaSubastadorComponent } from './vista-subastador/vista-subastador.component';
+import { EncabezadoComponent } from './inside/encabezado/encabezado.component';
+import { FooterComponent } from './inside/footer/footer.component';
+import { CuerpoComponent } from './inside/cuerpo/cuerpo.component';
+import { InicioComponent } from './inside/inicio/inicio.component';
+import { InsideComponent } from './inside/inside.component';
+import { HomeComponent } from './inside/home/home.component';
+import { PresentacionComponent } from './presentacion/presentacion.component';
+import { RegistroComponent } from './registro/registro.component';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntroduccionComponent,
+    EncabezadoComponent,
+    FooterComponent,
+    CuerpoComponent,
+    InicioComponent,
+    InsideComponent,
     HomeComponent,
-    VistaPujadorComponent,
-    VistaSubastadorComponent
+    PresentacionComponent,
+    RegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,

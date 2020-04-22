@@ -33,7 +33,3 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('Auctioneer app is running!');
   });
 });
-
-/***************************/
-/*Esto es lo que tenia Manu*/
-/************************* */
