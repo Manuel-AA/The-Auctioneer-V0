@@ -1,9 +1,9 @@
 
-<div class="bg-dark text-white py-5">
-    <h1>Encabezado</h1>
+<div class="bg-white text-black">
+  <img class= "logo" [src] = "logotipo"/>
 </div>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" [routerLink]="['/home']">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,7 +14,7 @@
           <a class="nav-link" [routerLink]="['/ver']">Pujador <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/subida']">Subastador</a>
+          <a class="nav-link" [routerLink]="['/subida']">Subir producto</a>
         </li>
         <li class="nav-item"routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/home']">Home</a>
