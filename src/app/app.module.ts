@@ -14,6 +14,7 @@ import { RegistroComponent } from './presentacion/registro/registro.component';
 import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesion.component';
 import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
 import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
+import { CuerpoComponent } from './presentacion/cuerpo/cuerpo.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterPrincipalComponent } from './presentacion/footer-principal/footer
     RegistroComponent,
     InicioSesionComponent,
     EncabezadoPrincipalComponent,
-    FooterPrincipalComponent
+    FooterPrincipalComponent,
+    CuerpoComponent
   ],
   imports: [
     BrowserModule,
