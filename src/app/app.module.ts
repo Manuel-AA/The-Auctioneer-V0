@@ -10,8 +10,10 @@ import { VerProductoComponent } from './inside/ver_producto/ver_producto.compone
 import { InsideComponent } from './inside/inside.component';
 import { HomeComponent } from './inside/home/home.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
-import { RegistroComponent } from './registro/registro.component';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './presentacion/registro/registro.component';
+import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesion.component';
+import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
+import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     HomeComponent,
     PresentacionComponent,
     RegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    EncabezadoPrincipalComponent,
+    FooterPrincipalComponent
   ],
   imports: [
     BrowserModule,
