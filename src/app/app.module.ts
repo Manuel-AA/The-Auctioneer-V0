@@ -7,7 +7,6 @@ import { EncabezadoComponent } from './inside/encabezado/encabezado.component';
 import { FooterComponent } from './inside/footer/footer.component';
 import { SubirProductoComponent } from './inside/subir_producto/subir_producto.component';
 import { VerProductoComponent } from './inside/ver_producto/ver_producto.component';
-import { InsideComponent } from './inside/inside.component';
 import { HomeComponent } from './inside/home/home.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
 import { RegistroComponent } from './presentacion/registro/registro.component';
@@ -23,7 +22,6 @@ import { CuerpoComponent } from './presentacion/cuerpo/cuerpo.component';
     FooterComponent,
     SubirProductoComponent,
     VerProductoComponent,
-    InsideComponent,
     HomeComponent,
     PresentacionComponent,
     RegistroComponent,

@@ -11,5 +11,5 @@ export class EncabezadoComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  logotipo = "/assets/img/logotipo.png"
 }
