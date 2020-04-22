@@ -6,7 +6,7 @@ import { HomeComponent } from './inside/home/home.component';
 import { PresentacionComponent } from './presentacion/presentacion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-import { InsideComponent } from './inside/inside.component';
+
 
 const routes: Routes = [
   { path: 'subida', component: SubirProductoComponent },
@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'presentacion', component: PresentacionComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'InicioSesion', component: InicioSesionComponent },
-  { path: 'inside', component: InsideComponent },
   {path:'', component: PresentacionComponent,pathMatch:'full'},
   {path:'**',redirectTo:'/',pathMatch:'full'} /*redirigir a una pagina error 404 (crear otro componente)*/
 ];
