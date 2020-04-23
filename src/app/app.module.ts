@@ -14,6 +14,7 @@ import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesio
 import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
 import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
 import { CuerpoComponent } from './presentacion/cuerpo/cuerpo.component';
+import { ConocerComponent } from './inside/conocer/conocer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CuerpoComponent } from './presentacion/cuerpo/cuerpo.component';
     InicioSesionComponent,
     EncabezadoPrincipalComponent,
     FooterPrincipalComponent,
-    CuerpoComponent
+    CuerpoComponent,
+    ConocerComponent
   ],
   imports: [
     BrowserModule,
