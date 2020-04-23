@@ -10,6 +10,7 @@ export class ConocerComponent implements OnInit {
 
   imagen1 = "/assets/img/subasta.jpeg"
   imagen2 = "/assets/img/seguridad.jpeg"
+  imagen3 = "/assets/img/pilares.PNG"
   imagenFlechaDer = "/assets/img/flecha_derecha.png"
   imagenActual = 1;
   constructor() { }
@@ -19,6 +20,20 @@ export class ConocerComponent implements OnInit {
 
 
   cambiarImagenDer(){
-    this.imagenActual = this.imagenActual + 1;
+    if(this.imagenActual != 3){
+      this.imagenActual = this.imagenActual + 1;
+    }
+    else{
+      this.imagenActual = 1;
+    }
+  }
+
+  cambiarImagenIzq(){
+    if(this.imagenActual != 1){
+      this.imagenActual = this.imagenActual - 1;
+    }
+    else{
+      this.imagenActual = 3;
+    }
   }
 }

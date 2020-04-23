@@ -4,7 +4,7 @@
     <div class="container">
         
             <div class="media border p-3" *ngIf="imagenActual === 1" >
-                    <img [src]="imagen1" class="mr-3 mt-3 rounded-circle" style="width:20%;">
+                    <img [src]="imagen1" id="foto1">
                     <div class="media-body">
                         <br>
                       <h4>¿Qué es una subasta? </h4>
@@ -22,7 +22,7 @@
                     </div>
                   </div>
                   <div class="media border p-3" *ngIf="imagenActual === 2" >
-                        <img [src]="imagen2" class="mr-3 mt-3 rounded-circle" style="width:20%;">
+                        <img [src]="imagen2" id="foto2">
                         <div class="media-body">
                             <br>
                           <h4>¿Estas subastas son seguras? </h4>
@@ -40,7 +40,27 @@
                           
                         </div>
                       </div>
+                      <div class="media border p-3" *ngIf="imagenActual === 3" >
+                        <img [src]="imagen3" id="foto3">
+                        <div class="media-body">
+                            <br>
+                          <h4>¿Quiénes somos? </h4>
+                          <p>The Auctioneer está conformado por un pequeño equipo en crecimiento, con muchas ganas de 
+                            trabajar y seguir incluyendo funcionalidades a nuestro sistema de subastas online. <br> <br>
+
+                            Nuestro equipo se centra en 3 pilares: seguridad del cliente, facilidad de uso y organización de la estructura de la página,
+                            con el objetivo de que cualquier persona sea capaz de utilizar nuestro sistema y que, tras utilizarlo,
+                            se mantenga con nosotros y siga haciendo uso del mismo. <br> <br>
+
+                            Así que... ¿a qué estás esperando? ¡ EL TIEMPO DE LAS SUBASTAS SE ACABA !
+                    
+                          </p>
+                          
+                          
+                        </div>
+                      </div>
                   <img [src] = "imagenFlechaDer" id="flechaDer" (click)="cambiarImagenDer()">
+                  <img [src] = "imagenFlechaDer" id="flechaIzq" (click)="cambiarImagenIzq()">
     
     </div>
   
