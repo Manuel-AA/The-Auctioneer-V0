@@ -14,6 +14,10 @@ import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesio
 import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
 import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
 import { ConocerComponent } from './inside/conocer/conocer.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+import { FirestoreService } from './services/firestore.service';
 
 @NgModule({
   declarations: [
@@ -33,8 +37,10 @@ import { ConocerComponent } from './inside/conocer/conocer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
