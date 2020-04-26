@@ -13,14 +13,30 @@ export class RegistroComponent implements OnInit {
     email: '',
     password: ''
   }
-  constructor(private registroServicio: FirestoreService) {
 
-   }
+  usuarios:any;
+
+  constructor(private registroServicio: FirestoreService) {
+    this.registroServicio.listaUsuario().subscribe(usuario=>{
+      this.usuarios = usuario;
+    })
+  }
 
   ngOnInit() {
   }
 
   agregarUsuario(){
+    console.log(this.registroServicio.listaUsuario())
+    for(let usuario of this.usuarios){
+      if (usuario.nombreUsuario == this.usuario.nombreUsuario){
+        alert("Ya exite un usuario con ese nombre")
+        return
+      }
+      if (usuario.email == this.usuario.email){
+        alert("Ya exite un usuario con ese email")
+        return
+      }
+    }
     this.registroServicio.addUsuario(this.usuario);
     this.usuario.nombreUsuario = '';
     this.usuario.email = '';

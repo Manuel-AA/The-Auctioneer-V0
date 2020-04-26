@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(private firestoreService:FirestoreService) {
     this.firestoreService.listaProducto().subscribe(producto=>{
       this.productos = producto;
-      console.log(this.productos);
     })
    }
 
