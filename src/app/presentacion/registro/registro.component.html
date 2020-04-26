@@ -3,24 +3,13 @@
 <div class="mt-5 mb-5 container">
   <h2 class="text-center">Registro</h2>
   <br>
-  <form>
-      <div class="form-group">
-        <label for="exampleInputUserName1">Nombre de Usuario:</label>
-        <input type="text" class="form-control" id="exampleInputUserName1" required>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email:</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-        <small id="emailHelp" class="form-text text-muted">Este email no será compartido con nadie.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña:</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" required>
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-        <label class="form-check-label" for="exampleCheck1">He leido y acepto las condiciones de uso.</label>
-      </div>
-      <button type="submit" class="btn btn-primary" [routerLink]="['../inicio-sesion']">Submit</button>
-    </form>
+  <form (ngSubmit)="agregarUsuario()">
+    <h1>Nombre de usuario:</h1>
+    <input type="text" placeholder="Ingresa tu nombre" name="nombreUsuario" class="form-control" [(ngModel)]="usuario.nombreUsuario" required>
+    <h1>Email:</h1>
+    <input type="email" placeholder="Ingresa tu nombre" name="email" class="form-control"  [(ngModel)]="usuario.email" required>
+    <h1>Contraseña:</h1>
+    <input type="password" placeholder="Ingresa una contraseña" name="password" class="form-control" [(ngModel)]="usuario.password" required>
+    <button class="btn btn-warning" type="submit">Agregar</button>
+  </form>
 </div>
