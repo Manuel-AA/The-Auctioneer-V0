@@ -1,25 +1,12 @@
 <app-encabezado></app-encabezado>
 
 <div class = "container">
-  <!--<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  <router-outlet></router-outlet>-->
 
-  <h1>Aqui aparecería formulario para subir un producto ya sabes unos comics de puta madre</h1>
+  <form (ngSubmit) = "AgregarProducto()">
+    <input type="text" placeholder="Ingresa el nombre del producto" name="nombre" class="form-control  mt-4" [(ngModel)]="producto.nombre">
+    <input type="number" placeholder="Ingresa el precio de salida del producto" name="precio" class="form-control  mt-4" [(ngModel)]="producto.precioSalida">
+    <button class="btn btn-warning mt-4" type="submit">Agregar</button>
+  </form>
 
 </div>
 
