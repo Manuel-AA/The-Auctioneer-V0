@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  productos:any;
+
+  constructor(private firestoreService:FirestoreService) {
+    this.firestoreService.listaProducto().subscribe(producto=>{
+      this.productos = producto;
+    })
+   }
 
   ngOnInit() {
   }
