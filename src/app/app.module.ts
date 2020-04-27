@@ -14,8 +14,11 @@ import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesio
 import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
 import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
 import { ConocerComponent } from './inside/conocer/conocer.component';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirestoreService } from './services/firestore.service';
 import { FormsModule } from '@angular/forms';
@@ -40,6 +43,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
     FormsModule
   ],
   providers: [FirestoreService],

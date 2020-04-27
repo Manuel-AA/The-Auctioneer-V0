@@ -15,6 +15,6 @@
     <input type="password" placeholder="Ingresa una contraseña" name="password" class="form-control" minlength=8 [(ngModel)]="usuario.password" #password="ngModel" required>
     <span *ngIf="password.value != '' && password.invalid"><h4 style="color: red">Contraseña no válida. Debe tener 8 caracteres mínimo</h4></span>
     <span *ngIf="password.value == '' "><h4 style="color: red">Contraseña no válida, campo obligatorio</h4></span>
-    <button class="btn btn-warning mt-3" type="submit" [disabled]="f.invalid">Agregar</button>
+    <button class="btn btn-warning mt-3" type="submit" [disabled]="f.invalid" [routerLink]="['../inicio-sesion']">Agregar</button>
   </form>
 </div>

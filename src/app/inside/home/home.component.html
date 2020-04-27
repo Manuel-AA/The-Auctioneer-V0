@@ -1,8 +1,9 @@
 <app-encabezado></app-encabezado>
 
 <div class = "container">
-    <h1>HOME!</h1>
-    <div class="alert alert-warning" role="alert" *ngFor="let producto of productos">
-        Nombre: {{producto.nombre}}, Precio: {{producto.precio}}
+    <div class="row">
+        <div class="alert alert-warning col-lg-4 col-md-4 col-sm-6 col-xs-12" role="alert" *ngFor="let producto of productos">
+            Nombre: {{producto.nombre}}, Precio: {{producto.precio}}
+        </div>
     </div>
 </div>
