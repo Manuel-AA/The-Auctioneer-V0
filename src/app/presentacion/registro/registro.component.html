@@ -6,15 +6,15 @@
   <form (ngSubmit)="agregarUsuario()" #f="ngForm">
     <h1>Nombre de usuario:</h1>
     <input type="text" #nombre = "ngModel" placeholder="Ingresa tu nombre" name="nombreUsuario" class="form-control" [(ngModel)]="usuario.nombreUsuario" required>
-    <span *ngIf="nombre.value == '' "><h4 style="color: red">Nombre no válido, campo obligatorio</h4></span>
+    <span *ngIf="nombre.value == '' "><h4 style="color: red">Campo obligatorio</h4></span>
     <h1>Email:</h1>
     <input type="email" placeholder="Ingresa tu nombre" name="email" class="form-control"  [(ngModel)]="usuario.email" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$" #email="ngModel" required>
     <span *ngIf="email.value != '' && email.invalid"><h4 style="color: red">Email no válido, comprueba el formato</h4></span>
-    <span *ngIf="email.value == '' "><h4 style="color: red">Email no válido, campo obligatorio</h4></span>
+    <span *ngIf="email.value == '' "><h4 style="color: red">Campo obligatorio</h4></span>
     <h1>Contraseña:</h1>
     <input type="password" placeholder="Ingresa una contraseña" name="password" class="form-control" minlength=8 [(ngModel)]="usuario.password" #password="ngModel" required>
     <span *ngIf="password.value != '' && password.invalid"><h4 style="color: red">Contraseña no válida. Debe tener 8 caracteres mínimo</h4></span>
-    <span *ngIf="password.value == '' "><h4 style="color: red">Contraseña no válida, campo obligatorio</h4></span>
+    <span *ngIf="password.value == '' "><h4 style="color: red">Campo obligatorio</h4></span>
     <button class="btn btn-warning mt-3" type="submit" [disabled]="f.invalid" [routerLink]="['../inicio-sesion']">Agregar</button>
   </form>
 </div>

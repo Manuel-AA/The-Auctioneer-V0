@@ -24,7 +24,6 @@ export class RegistroComponent implements OnInit {
   }
 
   agregarUsuario(){
-    console.log(this.registroServicio.listaUsuario())
     for(let usuario of this.usuarios){
       if (usuario.nombreUsuario == this.usuario.nombreUsuario){
         alert("Ya exite un usuario con ese nombre")
