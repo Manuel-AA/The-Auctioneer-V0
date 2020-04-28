@@ -11,7 +11,7 @@ export class SubirProductoComponent implements OnInit {
   producto: any = {
     nombre: "",
     precioSalida: "",
-    pujaActual: 0,
+    pujaActual: "",
     precioCompraYa: ""
   }
 
@@ -21,11 +21,11 @@ export class SubirProductoComponent implements OnInit {
   }
 
   AgregarProducto() {
-    this.producto.precioCompraYa = this.producto.precioSalida * 1.5;
+    this.producto.pujaActual = this.producto.precioSalida;
     this.servicio.addProducto(this.producto);
     this.producto.nombre = "";
     this.producto.precioSalida = "";
-    this.producto.pujaActual = 0;
+    this.producto.pujaActual = "";
     this.producto.precioCompraYa = "";
   }
 

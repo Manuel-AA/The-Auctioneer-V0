@@ -1,0 +1,47 @@
+<app-encabezado></app-encabezado>
+
+<div class = "container">
+    <div class="row">
+        <div class="alert alert-warning col-lg-4 col-md-4 col-sm-6 col-xs-12" role="alert" *ngFor="let producto of productos">
+            <div class="float-right" (click)="EliminarProducto(producto)">
+                <i class="far fa-trash-alt"></i>
+            </div>
+            <div class="float-right mr-3" (click)="ModificarProducto(producto)" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-pencil-alt"></i>
+            </div>
+            <h6>Nombre: {{producto.nombre}}</h6>
+            <h6>Precio de salida: {{producto.precioSalida}} $</h6>
+            <h6>Puja actual: {{producto.pujaActual}} $</h6>
+            <h6>Precio de CompraYa: {{producto.precioCompraYa}} $</h6>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modificar: {{modificarProducto.nombre}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class = "container">
+
+                <form (ngSubmit) = "AgregarProductoModificado()">
+                    <input type="text" placeholder="Ingresa el nombre del producto" name="nombre" class="form-control  mt-4" [(ngModel)]="modificarProducto.nombre">
+                    <input type="number" placeholder="Ingresa el precio de salida del producto" name="precioSalida" class="form-control  mt-4" [(ngModel)]="modificarProducto.precioSalida">
+                    <input type="number" placeholder="Ingresa el precio de CompraYa del producto" name="precioCompraYa" class="form-control  mt-4" [(ngModel)]="modificarProducto.precioCompraYa">
+                    <button class="btn btn-warning mt-4" type="submit">Guardar cambios</button>
+                </form>
+            
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

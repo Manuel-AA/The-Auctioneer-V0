@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirestoreService } from './services/firestore.service';
 import { FormsModule } from '@angular/forms';
+import { PerfilComponent } from './inside/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     InicioSesionComponent,
     EncabezadoPrincipalComponent,
     FooterPrincipalComponent,
-    ConocerComponent
+    ConocerComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
