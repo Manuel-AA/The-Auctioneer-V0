@@ -34,4 +34,8 @@ export class FirestoreService {
   addUsuario(usuario: Usuario){
     this.usuariosCollection.add(usuario);
   }
+
+  addProducto(producto: Producto){
+    this.productosCollection.add(producto);
+  }
 }

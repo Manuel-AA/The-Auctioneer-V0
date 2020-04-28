@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -14,7 +16,7 @@ export class InicioSesionComponent implements OnInit {
   }
   usuarios:any;
 
-  constructor(private registroServicio: FirestoreService) {
+  constructor(private registroServicio: FirestoreService, private router: Router) {
     this.registroServicio.listaUsuario().subscribe(usuario=>{
       this.usuarios = usuario;
     })
@@ -23,16 +25,18 @@ export class InicioSesionComponent implements OnInit {
   ngOnInit() {
   }
 
+
   iniciarSesion(){
-    console.log("Patata")
+    
     for(let usuario of this.usuarios){
       if (usuario.email == this.usuario.email){
         if (usuario.password == this.usuario.password){
-          return
+          this.router.navigateByUrl('/home');
+          return;
         }
         else{
           alert("La contraseña es incorrecta");
-          return
+          return;
         }
       }
     }

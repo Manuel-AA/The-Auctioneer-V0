@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -14,7 +15,7 @@ export class RegistroComponent implements OnInit {
     password: ''
   }
   usuarios:any;
-  constructor(private registroServicio: FirestoreService) {
+  constructor(private registroServicio: FirestoreService, private router: Router) {
     this.registroServicio.listaUsuario().subscribe(usuario=>{
       this.usuarios = usuario;
     })
@@ -38,6 +39,7 @@ export class RegistroComponent implements OnInit {
     this.usuario.nombreUsuario = '';
     this.usuario.email = '';
     this.usuario.password = '';
+    this.router.navigateByUrl('inicio-sesion');
   }
 
 }
