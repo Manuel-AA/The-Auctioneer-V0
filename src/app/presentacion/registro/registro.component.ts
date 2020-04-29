@@ -14,6 +14,7 @@ export class RegistroComponent implements OnInit {
     email: '',
     password: ''
   }
+  
   mensajeError: string = '';
   mensajeAcierto: string = '';
 
