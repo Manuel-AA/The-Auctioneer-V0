@@ -11,7 +11,7 @@ import { PerfilComponent } from './inside/perfil/perfil.component';
 
 const routes: Routes = [
   { path: 'subida', component: SubirProductoComponent },
-  { path: 'ver', component: VerProductoComponent },
+  { path: 'ver/:id', component: VerProductoComponent },
   { path: 'home', component: HomeComponent },
   { path: 'presentacion', component: PresentacionComponent },
   { path: 'registro', component: RegistroComponent },

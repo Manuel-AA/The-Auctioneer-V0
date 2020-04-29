@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-ver_producto',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerProductoComponent implements OnInit {
 
-  imagen = "https://images-na.ssl-images-amazon.com/images/I/315anlWUkgL._AC_UL160_SR160,160_.jpg";
+  productos:any;
+  id:any;
+  productoPagina:any[] = []
 
-  constructor() { }
+  constructor(private ruta:ActivatedRoute, private servicio:FirestoreService) {
+    this.ruta.params.subscribe(params=>{
+      this.id = params['id'];
+    })
+    this.servicio.listaProducto().subscribe(producto=>{
+      this.productos = producto;
+      for (let p of this.productos){
+        if (p.id == this.id){
+          this.productoPagina = p;
+        }
+      }
+    })
+    
+    
+   }
 
   ngOnInit() {
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { FirestoreService } from 'src/app/services/firestore.service';
 import { FirestoreService } from '../../services/firestore.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,17 @@ export class HomeComponent implements OnInit {
 
   productos:any;
 
-  constructor(private firestoreService:FirestoreService) {
+  constructor(private firestoreService:FirestoreService, private router:Router) {
     this.firestoreService.listaProducto().subscribe(producto=>{
       this.productos = producto;
     })
    }
 
   ngOnInit() {
+  }
+
+  redirigirProducto(producto:any){
+    this.router.navigate(["/ver/", producto.id])
   }
 
 }
