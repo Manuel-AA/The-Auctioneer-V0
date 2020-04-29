@@ -3,7 +3,7 @@
 <div class="mt-5 mb-5 container">
   <h2 class="text-center">Inicio de sesión</h2>
   <br>
-  <form (ngSubmit)="iniciarSesion()" #f="ngForm">
+  <form (ngSubmit)="tryLogin(usuario.email, usuario.password)" #f="ngForm">
     <h1>Email:</h1>
     <input type="email" placeholder="Ingresa tu nombre" name="email" class="form-control"  [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}" ngDefaultControl pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$" #email="ngModel" required >
     <span *ngIf="email.value != '' && email.invalid"><h4 style="color: red">Email no válido, comprueba el formato</h4></span>

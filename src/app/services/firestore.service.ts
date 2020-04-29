@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 /*import { Observable } from 'rxjs/Observable';*/
 import { map } from 'rxjs/operators';
+import * as firebase from 'firebase';
 
 export interface Producto { nombre: string; precioSalida: number; pujaActual: number; precioCompraYa: number;}
 export interface Usuario { nombreUsuario: string; email: string; password: string;}
@@ -58,5 +59,35 @@ export class FirestoreService {
   editProducto(producto) {
     this.productoDoc = this.afs.doc<Producto>(`productos/${producto.id}`);
     this.productoDoc.update(producto);
+  }
+
+  doRegister(email, password){
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        resolve(res);
+      }, err => reject(err))
+    })
+  }
+
+  doLogin(email, password){
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(res => {
+        resolve(res);
+      }, err => reject(err))
+    })
+  }
+
+  getCurrentUser(){
+    return new Promise<any>((resolve, reject) => {
+      var user = firebase.auth().onAuthStateChanged(function(user){
+        if (user){
+          resolve(user);
+        } else {
+          reject("No user logged in");
+        }
+      })
+    })
   }
 }

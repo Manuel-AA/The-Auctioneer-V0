@@ -32,6 +32,7 @@ export class PerfilComponent implements OnInit {
 
   ModificarProducto(producto) {
     this.modificarProducto = producto;
+    console.log(this.firestoreService.getCurrentUser())
   }
 
   AgregarProductoModificado(){

@@ -14,6 +14,9 @@ export class RegistroComponent implements OnInit {
     email: '',
     password: ''
   }
+  mensajeError: string = '';
+  mensajeAcierto: string = '';
+
   usuarios:any;
   constructor(private registroServicio: FirestoreService, private router: Router) {
     this.registroServicio.listaUsuario().subscribe(usuario=>{
@@ -41,5 +44,18 @@ export class RegistroComponent implements OnInit {
     this.usuario.password = '';
     this.router.navigateByUrl('inicio-sesion');
   }
+
+  tryRegister(email, password){
+    this.registroServicio.doRegister(email, password)
+    .then(res =>{
+      console.log(res);
+      alert("Tu cuenta ha sido creada correctamente")
+      this.router.navigateByUrl("/inicio-sesion")
+    }, err => {
+      console.log(err);
+      alert("Ya existe un usuario con ese email")
+    })
+  }
+  
 
 }

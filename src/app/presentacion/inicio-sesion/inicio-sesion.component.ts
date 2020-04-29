@@ -43,4 +43,13 @@ export class InicioSesionComponent implements OnInit {
     alert("No hay ningún usuario con ese email");
   }
 
+  tryLogin(email, password){
+    this.registroServicio.doLogin(email, password)
+    .then(res => {
+      this.router.navigate(["/home"]);
+    }, err => {
+      alert("Los datos introducidos no son correctos")
+    })
+  }
+
 }
