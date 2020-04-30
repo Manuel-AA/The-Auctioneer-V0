@@ -10,13 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  productos:any;
-  arrayProductos:any[] = [];
+  productos:any[] = [];
   email:any;
   name:any;
   id:any;
 
   modificarProducto: any = {
+    id: "",
     nombre: "",
     precioSalida: "",
     pujaActual: "",
@@ -28,13 +28,13 @@ export class PerfilComponent implements OnInit {
       this.id = params['id'];
     })
     this.firestoreService.listaProducto().subscribe(producto=>{
+      this.productos = []
       for (let p of producto){
-        if (firebase.auth().currentUser.email == p.emailSubastador){
-          this.arrayProductos.push(p);
+        if (firebase.auth().currentUser.email == p.emailSubastador ){
+          this.productos.push(p);
         }
       }
     })
-    this.productos = this.arrayProductos
    }
 
   ngOnInit() {
@@ -48,7 +48,11 @@ export class PerfilComponent implements OnInit {
   }
 
   ModificarProducto(producto) {
-    this.modificarProducto = producto;
+    this.modificarProducto.id = producto.id;
+    this.modificarProducto.nombre = producto.nombre;
+    this.modificarProducto.precioSalida = producto.precioSalida;
+    this.modificarProducto.pujaActual = producto.pujaActual;
+    this.modificarProducto.precioCompraYa = producto.precioCompraYa;
   }
 
   AgregarProductoModificado(){
