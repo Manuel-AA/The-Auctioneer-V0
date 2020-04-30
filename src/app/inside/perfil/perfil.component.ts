@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../services/firestore.service';
 import * as firebase from 'firebase';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  productos:any;
-  arrayProductos:any[] = []
+  productos:any[];
+  arrayProductos:any[] = [];
   email:any;
   name:any;
   id:any;
@@ -23,28 +23,28 @@ export class PerfilComponent implements OnInit {
     precioCompraYa: ""
   }
 
-  constructor(private firestoreService:FirestoreService, private ruta:ActivatedRoute,) {
+  constructor(private firestoreService:FirestoreService, private ruta:ActivatedRoute) {
     this.ruta.params.subscribe(params=>{
       this.id = params['id'];
     })
-
     this.firestoreService.listaProducto().subscribe(producto=>{
-      for (let p of producto){
-        console.log(p)
+      for (let p of this.productos){
         if (firebase.auth().currentUser.email == p.emailSubastador){
-          this.arrayProductos.push(p)
+          this.arrayProductos.push(p);
         }
       }
+      this.productos = this.arrayProductos;
     })
-    this.productos = this.arrayProductos;
    }
 
   ngOnInit() {
-   
+    
   }
 
   EliminarProducto(producto){
     this.firestoreService.removeProducto(producto);
+    alert("El producto se ha eliminado")
+    location.reload();
   }
 
   ModificarProducto(producto) {
