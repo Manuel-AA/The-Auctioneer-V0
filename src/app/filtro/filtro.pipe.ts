@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
+  transform(value: any = "", ...args: any[]): any {
     const resultadoBusqueda = [];
     for (const producto of value) {
       if (producto.nombre.indexOf(args) > -1) {
