@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  filtroHome = "";
+
   redirigirProducto(producto:any){
     this.router.navigate(["/ver/", producto.id])
   }

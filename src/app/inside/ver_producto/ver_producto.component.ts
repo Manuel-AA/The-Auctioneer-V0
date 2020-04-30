@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirestoreService } from 'src/app/services/firestore.service';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-ver_producto',

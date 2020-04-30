@@ -14,6 +14,7 @@ import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesio
 import { EncabezadoPrincipalComponent } from './presentacion/encabezado-principal/encabezado-principal.component';
 import { FooterPrincipalComponent } from './presentacion/footer-principal/footer-principal.component';
 import { ConocerComponent } from './inside/conocer/conocer.component';
+import { PerfilComponent } from './inside/perfil/perfil.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -22,7 +23,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirestoreService } from './services/firestore.service';
 import { FormsModule } from '@angular/forms';
-import { PerfilComponent } from './inside/perfil/perfil.component';
+import { FiltroPipe } from './filtro/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PerfilComponent } from './inside/perfil/perfil.component';
     EncabezadoPrincipalComponent,
     FooterPrincipalComponent,
     ConocerComponent,
-    PerfilComponent
+    PerfilComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

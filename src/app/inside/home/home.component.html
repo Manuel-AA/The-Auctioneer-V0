@@ -1,8 +1,10 @@
 <app-encabezado></app-encabezado>
-
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control" type="search" name="filtroHome" placeholder="Search" aria-label="Search" [(ngModel)]="filtroHome">
+</form>
 <div class = "container">
     <div class="row">
-        <div (click)="redirigirProducto(producto)" class="alert alert-warning col-lg-4 col-md-4 col-sm-6 col-xs-12" role="alert" *ngFor="let producto of productos">
+        <div (click)="redirigirProducto(producto)" class="alert alert-warning col-lg-4 col-md-4 col-sm-6 col-xs-12" role="alert" *ngFor="let producto of productos | filtro: filtroHome">
             <h6>Nombre: {{producto.nombre}}</h6>
             <h6>Precio de salida: {{producto.precioSalida}} $</h6>
             <h6>Puja actual: {{producto.pujaActual}} $</h6>
