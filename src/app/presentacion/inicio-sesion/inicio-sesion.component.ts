@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',

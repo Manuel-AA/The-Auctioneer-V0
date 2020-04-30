@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as firebase from 'firebase';
 
-export interface Producto { nombre: string; precioSalida: number; pujaActual: number; precioCompraYa: number;}
+export interface Producto { nombre: string; precioSalida: number; pujaActual: number; precioCompraYa: number; subastador: string; emailSubastador: string}
 export interface Usuario { nombreUsuario: string; email: string; password: string;}
 
 @Injectable({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../services/firestore.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-subir_producto',
@@ -12,7 +13,9 @@ export class SubirProductoComponent implements OnInit {
     nombre: "",
     precioSalida: "",
     pujaActual: "",
-    precioCompraYa: ""
+    precioCompraYa: "",
+    subastador: "",
+    emailSubastador: ""
   }
 
   constructor( private servicio: FirestoreService) { }
@@ -22,6 +25,13 @@ export class SubirProductoComponent implements OnInit {
 
   AgregarProducto() {
     this.producto.pujaActual = this.producto.precioSalida;
+    var user = firebase.auth().currentUser;
+    if (user){
+      this.producto.subastador = firebase.auth().currentUser.displayName;
+      this.producto.emailSubastador = firebase.auth().currentUser.email;
+    } else {
+      // No user is signed in
+    }
     this.servicio.addProducto(this.producto);
     this.producto.nombre = "";
     this.producto.precioSalida = "";

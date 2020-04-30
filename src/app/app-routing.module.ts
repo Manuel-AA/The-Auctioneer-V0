@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },
   { path: 'conocenos', component: ConocerComponent},
-  { path: 'perfil', component: PerfilComponent},
+  { path: 'perfil/:id', component: PerfilComponent},
   { path: '', component: PresentacionComponent,pathMatch:'full'},
   { path:'**',redirectTo:'/',pathMatch:'full'} /*redirigir a una pagina error 404 (crear otro componente)*/
 ];

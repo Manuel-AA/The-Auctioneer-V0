@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../services/firestore.service';
 import * as firebase from 'firebase';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -10,8 +11,10 @@ import * as firebase from 'firebase';
 export class PerfilComponent implements OnInit {
 
   productos:any;
+  arrayProductos:any[] = []
   email:any;
   name:any;
+  id:any;
 
   modificarProducto: any = {
     nombre: "",
@@ -20,10 +23,20 @@ export class PerfilComponent implements OnInit {
     precioCompraYa: ""
   }
 
-  constructor(private firestoreService:FirestoreService) {
-    this.firestoreService.listaProducto().subscribe(producto=>{
-      this.productos = producto;
+  constructor(private firestoreService:FirestoreService, private ruta:ActivatedRoute,) {
+    this.ruta.params.subscribe(params=>{
+      this.id = params['id'];
     })
+
+    this.firestoreService.listaProducto().subscribe(producto=>{
+      for (let p of producto){
+        console.log(p)
+        if (firebase.auth().currentUser.email == p.emailSubastador){
+          this.arrayProductos.push(p)
+        }
+      }
+    })
+    this.productos = this.arrayProductos;
    }
 
   ngOnInit() {
@@ -36,26 +49,6 @@ export class PerfilComponent implements OnInit {
 
   ModificarProducto(producto) {
     this.modificarProducto = producto;
-    var user = firebase.auth().currentUser;
-    if (user) {
-      this.email = firebase.auth().currentUser.email;
-      this.name = firebase.auth().currentUser.displayName;
-    } else {
-      // No user is signed in.
-    }
-    if (user) {
-      firebase.auth().currentUser.updateProfile({
-        displayName: "pepe"
-      });
-      console.log(firebase.auth().currentUser);
-      // User is signed in.
-    } else {
-      // No user is signed in.
-    }
-
-    
-    console.log(this.name);
-    console.log(this.email);
   }
 
   AgregarProductoModificado(){

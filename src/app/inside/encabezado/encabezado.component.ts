@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
   logotipo = "/assets/img/logotipo.png"
+
+  redirigirPerfil(){
+    this.router.navigate(["/perfil/", firebase.auth().currentUser.uid])
+  }
 }

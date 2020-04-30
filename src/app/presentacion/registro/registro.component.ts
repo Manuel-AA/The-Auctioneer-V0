@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import {Router} from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-registro',
@@ -15,8 +16,6 @@ export class RegistroComponent implements OnInit {
     password: ''
   }
   
-  mensajeError: string = '';
-  mensajeAcierto: string = '';
 
   usuarios:any;
   constructor(private registroServicio: FirestoreService, private router: Router) {
@@ -46,15 +45,26 @@ export class RegistroComponent implements OnInit {
     this.router.navigateByUrl('inicio-sesion');
   }
 
-  tryRegister(email, password){
+  tryRegister(email, password, nombreusuario){
     this.registroServicio.doRegister(email, password)
     .then(res =>{
       console.log(res);
       alert("Tu cuenta ha sido creada correctamente")
-      this.router.navigateByUrl("/inicio-sesion")
+      this.tryLogin(email, password)
+      firebase.auth().currentUser.updateProfile({displayName: nombreusuario});
+      this.router.navigateByUrl("/home")
     }, err => {
       console.log(err);
       alert("Ya existe un usuario con ese email")
+    })
+  }
+
+  tryLogin(email, password){
+    this.registroServicio.doLogin(email, password)
+    .then(res => {
+      this.router.navigate(["/home"]);
+    }, err => {
+      alert("Los datos introducidos no son correctos")
     })
   }
   

@@ -3,7 +3,7 @@
 <div class="mt-5 mb-5 container">
   <h2 class="text-center">Registro</h2>
   <br>
-  <form (ngSubmit)="tryRegister(usuario.email, usuario.password)" #f="ngForm">
+  <form (ngSubmit)="tryRegister(usuario.email, usuario.password, usuario.nombreUsuario)" #f="ngForm">
     <h1>Nombre de usuario:</h1>
     <input type="text" #nombre = "ngModel" placeholder="Ingresa tu nombre" name="nombreUsuario" class="form-control" [(ngModel)]="usuario.nombreUsuario" required>
     <span *ngIf="nombre.value == '' "><h4 style="color: red">Campo obligatorio</h4></span>
