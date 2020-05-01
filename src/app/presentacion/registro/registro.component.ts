@@ -15,9 +15,8 @@ export class RegistroComponent implements OnInit {
     email: '',
     password: ''
   }
-  
-
   usuarios:any;
+  
   constructor(private registroServicio: FirestoreService, private router: Router) {
     this.registroServicio.listaUsuario().subscribe(usuario=>{
       this.usuarios = usuario;

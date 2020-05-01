@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as firebase from 'firebase';
 
-export interface Producto { nombre: string; precioSalida: number; pujaActual: number; precioCompraYa: number; subastador: string; emailSubastador: string}
-export interface Usuario { nombreUsuario: string; email: string; password: string;}
+export interface Producto { nombre: string; precioSalida: number; pujaActual: number; precioCompraYa: number; subastador: string; emailSubastador: string, ultimoPujador: string}
+export interface Usuario { email: string; pujas: []}
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,12 @@ export class FirestoreService {
 
   private usuariosCollection: AngularFirestoreCollection<Usuario>;
   usuarios: Observable<Usuario[]>;
+  private usuarioDoc: AngularFirestoreDocument<Usuario>;
 
   constructor(private afs: AngularFirestore) {
     this.productosCollection = afs.collection<Producto>('productos');
-    // this.productos = this.productosCollection.valueChanges();
+    this.usuariosCollection = afs.collection<Usuario>('usuarios');
+
     this.productos = this.productosCollection.snapshotChanges().pipe(
       map(actions => actions.map (a => {
         const data = a.payload.doc.data() as Producto;
@@ -30,9 +32,14 @@ export class FirestoreService {
         return {id, ...data};
       }))
     );
-    
-    this.usuariosCollection = afs.collection<Usuario>('usuarios');
-    this.usuarios = this.usuariosCollection.valueChanges();
+
+    this.usuarios = this.usuariosCollection.snapshotChanges().pipe(
+      map(actions => actions.map (a => {
+        const data = a.payload.doc.data() as Usuario;
+        const id = a.payload.doc.id;
+        return {id, ...data};
+      }))
+    );
    }
 
    listaProducto(){
@@ -55,10 +62,19 @@ export class FirestoreService {
     this.productoDoc = this.afs.doc<Producto>(`productos/${producto.id}`);
     this.productoDoc.delete();
   }
+  removeUsuario(usuario) {
+    this.usuarioDoc = this.afs.doc<Usuario>(`usuarios/${usuario.id}`);
+    this.usuarioDoc.delete();
+  }
 
   editProducto(producto) {
     this.productoDoc = this.afs.doc<Producto>(`productos/${producto.id}`);
     this.productoDoc.update(producto);
+  }
+
+  editUsuario(usuario) {
+    this.usuarioDoc = this.afs.doc<Usuario>(`usuarios/${usuario.id}`);
+    this.usuarioDoc.update(usuario);
   }
 
   doRegister(email, password){
