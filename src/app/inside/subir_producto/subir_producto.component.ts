@@ -15,7 +15,8 @@ export class SubirProductoComponent implements OnInit {
     pujaActual: "",
     precioCompraYa: "",
     subastador: "",
-    emailSubastador: ""
+    emailSubastador: "",
+    tiempoInicio: ""
   }
 
   constructor( private servicio: FirestoreService) { }
@@ -32,6 +33,8 @@ export class SubirProductoComponent implements OnInit {
     } else {
       // No user is signed in
     }
+    this.producto.tiempoInicio = new Date().getTime();
+    this.producto.tiempoFin = 0;
     this.servicio.addProducto(this.producto);
     this.producto.nombre = "";
     this.producto.precioSalida = "";
