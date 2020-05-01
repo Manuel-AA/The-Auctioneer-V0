@@ -92,4 +92,8 @@ export class PerfilComponent implements OnInit {
     this.firestoreService.editProducto(this.modificarProducto)
   }
 
+  redirigirProducto(producto:any){
+    this.router.navigate(["/ver/", producto.id])
+  }
+
 }

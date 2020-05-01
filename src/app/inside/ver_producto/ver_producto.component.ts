@@ -18,6 +18,7 @@ export class VerProductoComponent implements OnInit {
     email: '',
     pujas: []
   }
+  usuarioActivoEmail:any = firebase.auth().currentUser.email
   usuarios:any;
   aux:any[];
   constructor(private ruta:ActivatedRoute, private servicio:FirestoreService) {

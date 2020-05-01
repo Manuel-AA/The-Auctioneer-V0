@@ -6,8 +6,8 @@
     <h1>Precio de salida: {{productoPagina.precioSalida}} $</h1>
     <h1>Puja actual: {{productoPagina.pujaActual}} $</h1>
     <h1>Precio de CompraYa: {{productoPagina.precioCompraYa}} $</h1>
-    <input type="number" placeholder="Ingresa el precio de CompraYa del producto" name="precioCompraYa" class="form-control  mt-4" [(ngModel)]="nuevaPuja">
-    <button class="btn btn-warning mt-4" (click)="cambiarPuja(nuevaPuja)"type="button">Guardar cambios</button>
+    <input type="number" placeholder="Ingresa el precio de CompraYa del producto" name="precioCompraYa" class="form-control  mt-4" [(ngModel)]="nuevaPuja" *ngIf="productoPagina.emailSubastador != usuarioActivoEmail">
+    <button class="btn btn-warning mt-4" (click)="cambiarPuja(nuevaPuja)"type="button" *ngIf="productoPagina.emailSubastador != usuarioActivoEmail">Guardar cambios</button>
 
     <!--<br>
 <br>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Component({
@@ -15,7 +15,7 @@ export class MispujasComponent implements OnInit {
   productosPujados:any;
   usuarioActivoPujas:any[] = [];
   
-  constructor(private firestoreService:FirestoreService, private ruta:ActivatedRoute) {
+  constructor(private firestoreService:FirestoreService, private ruta:ActivatedRoute, private router:Router) {
     this.ruta.params.subscribe(params=>{
       this.id = params['id'];
     })
@@ -41,6 +41,10 @@ export class MispujasComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  redirigirProducto(producto:any){
+    this.router.navigate(["/ver/", producto.id])
   }
 
 }
