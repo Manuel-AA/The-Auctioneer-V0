@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { FirestoreService } from './services/firestore.service';
 import { FormsModule } from '@angular/forms';
 import { FiltroPipe } from './filtro/filtro.pipe';
+import { MispujasComponent } from './inside/mispujas/mispujas.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FiltroPipe } from './filtro/filtro.pipe';
     FooterPrincipalComponent,
     ConocerComponent,
     PerfilComponent,
-    FiltroPipe
+    FiltroPipe,
+    MispujasComponent
   ],
   imports: [
     BrowserModule,

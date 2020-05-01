@@ -8,11 +8,13 @@ import { RegistroComponent } from './presentacion/registro/registro.component';
 import { InicioSesionComponent } from './presentacion/inicio-sesion/inicio-sesion.component';
 import { ConocerComponent } from './inside/conocer/conocer.component';
 import { PerfilComponent } from './inside/perfil/perfil.component';
+import { MispujasComponent } from './inside/mispujas/mispujas.component';
 
 const routes: Routes = [
   { path: 'subida', component: SubirProductoComponent },
   { path: 'ver/:id', component: VerProductoComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'mispujas/:id', component: MispujasComponent},
   { path: 'presentacion', component: PresentacionComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },

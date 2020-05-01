@@ -18,4 +18,8 @@ export class EncabezadoComponent implements OnInit {
   redirigirPerfil(){
     this.router.navigate(["/perfil/", firebase.auth().currentUser.uid])
   }
+
+  redirigirMisPujas(){
+    this.router.navigate(["/mispujas/", firebase.auth().currentUser.uid])
+  }
 }
